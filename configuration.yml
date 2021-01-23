@@ -27,7 +27,7 @@ sensor:
     json_attributes:
       - data
       
-    resource: 'http://api.aladhan.com/v1/timings?latitude=<use yours>&longitude=<use yours>&method=2&school=1'
+    resource: 'http://api.aladhan.com/v1/timings?latitude=-7.330655030995253&longitude=110.49974217454746&method=5&school=2'
     value_template: '{{ value_json["data"]["meta"]["method"]["name"].title() }}'
     scan_interval: 3600
 
