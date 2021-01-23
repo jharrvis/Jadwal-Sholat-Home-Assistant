@@ -1,15 +1,6 @@
-- action:
-  - alias: 'Azan'
-    data:
-      entity_id: media_player.speaker
-      media_content_id: http://praytimes.org/audio/adhan/Sunni/Adhan%20Makkah.mp3
-      media_content_type: audio/mp3
-    service: media_extractor.play_media
-  - data:
-      entity_id: media_player.speaker
-      volume_level: '0.6'
-    service: media_player.volume_set
-  alias: Adhan
+- id: "xxxxxxx"
+  alias: Putar Suara Adzan
+  description: ""
   trigger:
     - platform: template
       value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.fajr"), "%Y-%m-%d %H:%M")) }}'
@@ -23,19 +14,15 @@
       value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.isha"), "%Y-%m-%d %H:%M")) }}'
     - platform: template
       value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.tahajjud"), "%Y-%m-%d %H:%M")) }}'
-
-- alias: "Play MP3 after 10 minutes of Maghrib Adhan"
-  trigger:
-    - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.maghrib"), "%Y-%m-%d %H:%M")) + 600 }}' # Add 600s=10 minutes. Subtract for before Adhan.
+  condition: []
   action:
-  - alias: ''
-    data:
-      entity_id: media_player.speaker
-      media_content_id: <MP3 URL>
-      media_content_type: audio/mp3
-    service: media_extractor.play_media
-  - data:
-      entity_id: media_player.speaker
-      volume_level: '0.6'
-    service: media_player.volume_set
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.family_room #nama entity media player bisa menggunakan Google Home / Nest
+        media_content_id: http://praytimes.org/audio/adhan/Sunni/Adhan%20Makkah.mp3 #URL file mp3 suara adzan
+        media_content_type: audio/mp3
+    - service: media_player.volume_set
+      data:
+        volume_level: "0.6"
+      entity_id: media_player.family_room
+  mode: single
