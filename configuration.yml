@@ -1,16 +1,3 @@
-homeassistant:
-  latitude: <use yours>
-  longitude: <use yours>
-  elevation: <use yours>
-  unit_system: <use yours>
-  time_zone: <use yours>
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
-discovery:
-media_extractor:
-sun:
-
 sensor:
   - platform: time_date
     display_options:
@@ -27,7 +14,7 @@ sensor:
     json_attributes:
       - data
       
-    resource: 'http://api.aladhan.com/v1/timings?latitude=-7.330655030995253&longitude=110.49974217454746&method=5&school=2'
+    resource: 'http://api.aladhan.com/v1/timings?latitude=<LAT>&longitude=<LONG>&method=5&school=2'
     value_template: '{{ value_json["data"]["meta"]["method"]["name"].title() }}'
     scan_interval: 3600
 
@@ -57,11 +44,3 @@ sensor:
      tahajjud:
        friendly_name: 'Tahajjud'
        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Imsak"] | timestamp_custom("%H:%M") }}'
-  
-# Text to speech
-tts:
-  - platform: google_translate
-
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
