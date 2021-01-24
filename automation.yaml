@@ -19,7 +19,7 @@
     - service: media_player.play_media
       data_template:
         entity_id: media_player.family_room #nama entity media player bisa menggunakan Google Home / Nest
-        media_content_id: http://praytimes.org/audio/adhan/Sunni/Adhan%20Makkah.mp3 #URL file mp3 suara adzan
+        media_content_id: https://www.googleapis.com/drive/v3/files/1ZibKg7tFbQbxSyzrvx70oF9LQ3yNizN-?alt=media&key=AIzaSyDh3M31aHjLkIFAlTpOeK7Q6JeUlXQ8gn4 #URL file mp3 suara adzan
         media_content_type: audio/mp3
     - service: media_player.volume_set
       data:
