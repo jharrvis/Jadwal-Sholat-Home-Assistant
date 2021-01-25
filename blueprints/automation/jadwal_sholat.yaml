@@ -2,9 +2,9 @@ blueprint:
   name: Jadwal Adzan
   description: Putar Suara Adzan pada jam waktu sholat.
   domain: automation
-  source_url: 
+  source_url: https://github.com/jharrvis/Jadwal-Sholat-Home-Assistant/blob/main/blueprints/automation/jadwal_sholat.yaml
     input:
-    motion_entity:
+    time_entity:
       name: Sensor Waktu
       selector:
         entity:
