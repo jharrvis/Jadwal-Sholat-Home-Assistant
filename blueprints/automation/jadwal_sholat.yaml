@@ -1,0 +1,12 @@
+blueprint:
+  name: Jadwal Adzan
+  description: Putar Suara Adzan pada jam waktu sholat.
+  domain: automation
+  source_url: 
+    input:
+    motion_entity:
+      name: Sensor Waktu
+      selector:
+        entity:
+          domain: binary_sensor
+          device_class: time
