@@ -3,17 +3,15 @@
   description: ""
   trigger:
     - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.fajr"), "%Y-%m-%d %H:%M")) }}'
+      value_template: '{{ states("sensor.time_date") == states("sensor.fajr") }}'
     - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.dhuhr"), "%Y-%m-%d %H:%M")) }}'
+      value_template: '{{ states("sensor.time_date") == states("sensor.dhuhr") }}'
     - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.asr"), "%Y-%m-%d %H:%M")) }}'
+      value_template: '{{ states("sensor.time_date") == states("sensor.asr") }}'
     - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.maghrib"), "%Y-%m-%d %H:%M")) }}'
+      value_template: '{{ states("sensor.time_date") == states("sensor.maghrib") }}'
     - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.isha"), "%Y-%m-%d %H:%M")) }}'
-    - platform: template
-      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.tahajjud"), "%Y-%m-%d %H:%M")) }}'
+      value_template: '{{ states("sensor.time_date") == states("sensor.isha") }}'
   condition: []
   action:
     - service: media_player.play_media
