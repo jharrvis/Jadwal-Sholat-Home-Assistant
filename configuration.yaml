@@ -8,7 +8,6 @@ sensor:
       - 'time_date'
       - 'time_utc'
       - 'beat'
-
   - platform: rest
     name: "Prayer Times"
     json_attributes:
@@ -17,7 +16,6 @@ sensor:
     resource: 'http://api.aladhan.com/v1/timings?latitude=<LAT>&longitude=<LONG>&method=5&school=2'
     value_template: '{{ value_json["data"]["meta"]["method"]["name"].title() }}'
     scan_interval: 3600
-
   - platform: template
     sensors:
       fajr:
@@ -41,6 +39,6 @@ sensor:
       midnight:
         friendly_name: 'Midnight'
         value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Midnight"] | timestamp_custom("%H:%M") }}'
-     tahajjud:
+      tahajjud:
        friendly_name: 'Tahajjud'
        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Imsak"] | timestamp_custom("%H:%M") }}'
