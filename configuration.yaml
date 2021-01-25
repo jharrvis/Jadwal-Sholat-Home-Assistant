@@ -22,25 +22,25 @@ sensor:
     sensors:
       fajr:
         friendly_name: 'Fajr'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Fajr"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Fajr"] | timestamp_custom("%H:%M") }}'
       sunrise:
         friendly_name: 'Sunrise'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Sunrise"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Sunrise"] | timestamp_custom("%H:%M") }}'
       dhuhr:
         friendly_name: 'Dhuhr'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Dhuhr"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Dhuhr"] | timestamp_custom("%H:%M") }}'
       asr:
         friendly_name: 'Asr'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Asr"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Asr"] | timestamp_custom("%H:%M") }}'
       maghrib:
         friendly_name: 'Maghrib'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Maghrib"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Maghrib"] | timestamp_custom("%H:%M") }}'
       isha:
         friendly_name: 'Isha'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Isha"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Isha"] | timestamp_custom("%H:%M") }}'
       midnight:
         friendly_name: 'Midnight'
-        value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Midnight"] | timestamp_custom("%H:%M") }}'
+        value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Midnight"] | timestamp_custom("%H:%M") }}'
      tahajjud:
        friendly_name: 'Tahajjud'
-       value_template: '{{ states("sensor.date") }} {{ states.sensor.prayer_times.attributes.data.timings["Imsak"] | timestamp_custom("%H:%M") }}'
+       value_template: '{{ states.sensor.prayer_times.attributes.data.timings["Imsak"] | timestamp_custom("%H:%M") }}'
