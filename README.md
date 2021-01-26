@@ -1,4 +1,4 @@
-# Home Assistant
+# Home Assistant [![made-for-homeassistant](https://img.shields.io/badge/for-homeassistant-blue)](https://www.home-assistant.io/)
 ***Jadwal Sholat (Islamic Praying Times)***
 
 Sensor Jadwal Sholat untuk Home Assistant dan Automation integrasi _Google Smart Speaker Media Player_
