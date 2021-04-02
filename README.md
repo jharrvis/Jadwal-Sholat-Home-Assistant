@@ -11,6 +11,7 @@ untuk memainkan lantunan Suara Adzan sesuai jadwal sholat.
 **Yang perlu di lakukan :**
 - Membuat sensor jadwal waktu sholat menggunakan REST API dari aladhan.com, menyesuaikan lokasi _LONG & LAT_ dengan mengedit file _configuration.yaml_
 - Membuat automation dengan trigger sensor waktu sholat, dengan action media_player.play_media memutar file mp3. edit file _automation.yaml_
+- Tutorial youtube : https://www.youtube.com/watch?v=sFj4TzTvafM
 
 **Credits :**
 - Ref : https://community.home-assistant.io/t/hanafi-islamic-prayer-time/147440/10
